@@ -1,4 +1,5 @@
 /* make the game background to be full screen */
+
 .gameBackGround
 { 
     width: 750px;
@@ -9,8 +10,9 @@
     border : 3px solid #999;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     position: relative;
-    /*z-index: 1; /* to determine in wich layer this element is */
+    /*z-index: 1; */ /* to determine in wich layer this element is */
 }
+
 
  body {
   margin: 0;
@@ -21,6 +23,7 @@
   font-family: system-ui, sans-serif;
   
 }
+
 
 h1 {
    text-align: center; 
@@ -55,33 +58,43 @@ p:nth-of-type(2){
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 14px;
-    margin-top: -50px;
+    gap: 27px;
+    margin-top: 123px;
     z-index: 2;
-    left: 65px;
-    top: -19px;
-
+    left: -16px;
+    top: 5px;
 }
 
 .circle {
 
-    width: 150px;
-    height: 150px;
+        width: 205px;
+    height: 204px;
     border-radius: 50%;
     background-color: gray;
     border: 3px solid black;
     cursor: pointer;
-    transition: 0.2s;  
+    transition: 0.2s;
 }
+
 #startButton
 {
     display: block;
-    /*justify-content: right;*/
     margin: 40px auto 0 auto;
     padding: 12px 20px;
     font-size: 1.2rem;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: pointer; 
+
+}
+
+#restartButton
+{
+    /* display: block; */
+    margin: 40px auto 0 auto;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer; 
 
 }
 
@@ -95,7 +108,8 @@ p:nth-of-type(2){
 
 
 /* you loose msg */
- #message1{
+ 
+#message3{
  
 background-color:darkorange;
 display: inline ;
@@ -103,8 +117,20 @@ padding: 10px;
 border-radius:10px ;
 }
 
+#message2{
+ 
+background-color:darkorange;
+display: inline ;
+padding: 10px;
+border-radius:10px ;
+}
 
-
-
+#message1{
+ 
+background-color:darkorange;
+display: inline ;
+padding: 10px;
+border-radius:10px ;
+}
 
 

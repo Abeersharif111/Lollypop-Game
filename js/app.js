@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-
+//const sound = null
 
 /*---------------------------- Variables (state) ----------------------------*/
 let time =0
@@ -44,7 +44,6 @@ document.getElementById('backGroundID').style.backgroundImage = 'url(' + 'C:/Use
 function initTheGame(){
     starButton1.classList.remove('hidden')
     restartButton.classList.add('hidden')
-
     gameOver = false
     timeLeft= 10
     timerEl.textContent= timeLeft
@@ -126,12 +125,16 @@ function render(){
             
             //restartButton.classList.remove('hidden')
             //console.log(restarButton)
+            playWinningSound()
             gameMessageEl3.classList.remove('hidden')  // works
+            starButton1.classList.add('hidden')
             //gameMessageEl3.innerHTML='you lost'
             
         } else{  
             
                 console.log('SCORE LESS THAN 30 AND GAME IS OVER')
+                 starButton1.classList.add('hidden')
+                 playFailSound()
                return gameMessageEl1.classList.remove('hidden')
             
             }
@@ -167,11 +170,31 @@ function circleClicked()
     { 
         score= score +10
         scoreEl.textContent=score
+        playRedSound()
         gameMessageEl2.classList.remove('hidden')  //there is some thing wrong
         //gameMessageEl2.classList.add('hidden')
     }
 
 }
+
+
+function playRedSound(){
+    const sound = new Audio("../assets/redSound.mp3 ")
+    sound.play()
+}
+
+function playWinningSound(){
+    const sound = new Audio("../assets/goodresult.mp3 ")
+    sound.play()
+}
+
+function playFailSound(){
+    const sound = new Audio("../assets/failsound.mp3 ")
+    sound.play()
+}
+
+
+
 
 function playAgain(){
     time =0
@@ -184,6 +207,8 @@ function playAgain(){
     c3Id.style.backgroundColor= 'gray'
     gameMessageEl1.classList.add('hidden')
     gameMessageEl3.classList.add('hidden')
+    starButton1.classList.remove('hidden')
+
     // initTheGame()
 }
 
